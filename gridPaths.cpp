@@ -9,19 +9,24 @@ void solve() {
     int n;
     cin >> n;
     vector<vector<int>> dp(n, vector<int>(n));
-    dp[0][0] = 1;
+    
     for (int row = 0; row < n; row++) {
         string trap;
         cin >> trap;
         for (int col = 0; col < n; col++) {
-            if (row == 0 && col == 0) {
+            //starting point
+            if (row == 0 && col == 0) {     
                 if (trap[0] == '*') {
                     cout << 0 << endl;
                     return;
                 }
-                else 
+                else {
+                    dp[row][col] = 1;
                     continue;
+                }
             }
+
+            // Check square's up and left
             if (trap[col] == '*') {
                 dp[row][col] = 0;
             }
