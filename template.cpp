@@ -4,26 +4,10 @@ using namespace std;
 using ll = long long;
 
 
-int greatest(int n) {
-    int res = 0;
-    while (n > 0) {
-        res = max(res, n % 10);
-        n /= 10;
-    }
-    return res;
-}
 
 
-void solve() {  // Not dp!!!!!!!!!!!!!!
-    int n; 
-    cin >> n;
-    int res = 0;
-    while (n > 0) {
-        int sub = greatest(n);
-        n -= sub;
-        res++;
-    }
-    cout << res << endl;
+void solve() { 
+
 }
 
 
