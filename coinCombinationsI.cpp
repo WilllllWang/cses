@@ -17,8 +17,8 @@ void solve() {
 
     vector<ll> dp(x + 1, 0);
     dp[0] = 1;
-    for (ll i = 0; i <= x; i++) {
-        if (i == 0 || dp[i] > 0) {
+    for (ll i = 1; i <= x; i++) {
+        if (dp[i] > 0) {
             dp[i] %= mod;
             for (auto& c: coins) {
                 if (i + c <= x) {
