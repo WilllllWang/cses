@@ -9,12 +9,14 @@ const int mod = 1e9 + 7;
 // If num - 1 occurs after num, then one extra round needed
 void solve() { 
     int n; cin >> n;
+    vector<int> v(n);
+    for (auto& x: v) cin >> x;
+    
     int res = 0;
     unordered_set<int> seen;
-    for (int i = 0; i < n; i++) {
-        int num; cin >> num;
-        if (seen.count(num - 1) < 1) res++;
-        seen.insert(num);
+    for (auto& x: v) {
+        if (!seen.count(x - 1)) res++;
+        seen.insert(x);
     }
 
     cout << res << endl;
